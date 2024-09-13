@@ -14,5 +14,7 @@ elif income > 50000 and income <= 100000:
 elif income > 100000:
     tax = 0.3 * income
 
-
-print(f"Tax of ${income} is: {tax}")
+if income < 0:
+    print("Please enter a valid income")
+else:
+    print(f"Calculated tax amount for ${income} is: ${tax}")
