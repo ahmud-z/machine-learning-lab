@@ -1,20 +1,19 @@
-income = int(input("Enter your income: "))
+def calculate_tax(income):
+    if income <= 10000:
+        tax = income * 0.05
+    elif income <= 50000:
+        tax = (10000 * 0.05) + ((income - 10000) * 0.10)
+    elif income <= 100000:
+        tax = (10000 * 0.05) + (40000 * 0.10) + ((income - 50000) * 0.20)
+    else:
+        tax = (10000 * 0.05) + (40000 * 0.10) + (50000 * 0.20) + ((income - 100000) * 0.30)
+    
+    return tax
 
-tax = 0
+income = float(input("Enter your income: "))
+tax = calculate_tax(income)
 
-if income <= 10000:
-    tax = 0.05 * income
+print(f"The total tax amount an income of ${income} is: ${tax:.2f}")
 
-elif income > 10000 and income <= 50000:
-    tax = 0.1 * income
 
-elif income > 50000 and income <= 100000:
-    tax = 0.2 * income
 
-elif income > 100000:
-    tax = 0.3 * income
-
-if income < 0:
-    print("Please enter a valid income")
-else:
-    print(f"Calculated tax amount for ${income} is: ${tax}")
