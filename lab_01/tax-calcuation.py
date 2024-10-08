@@ -14,6 +14,3 @@ income = float(input("Enter your income: "))
 tax = calculate_tax(income)
 
 print(f"The total tax amount an income of ${income} is: ${tax:.2f}")
-
-
-
